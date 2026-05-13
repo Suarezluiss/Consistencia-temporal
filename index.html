@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Temporal</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <h1 class="loader-title">FEED TEMPORAL</h1>
+
+        <div class="barra-carga">
+            <div class="progreso-carga"></div>
+        </div>
+    </div>
+
+    <!-- PARTICULAS -->
+    <canvas id="particles"></canvas>
+
+    <!-- INICIO -->
+    <div id="inicio" class="inicio-container">
+
+        <!-- IZQUIERDA -->
+        <div class="panel-info">
+
+            <h2>¿Qué es?</h2>
+
+            <p>
+                La consistencia temporal es la capacidad de organizar
+                eventos y publicaciones siguiendo un orden correcto en el tiempo.
+            </p>
+
+            <p>
+                En este juego deberás reconstruir una línea temporal
+                ordenando publicaciones desde la más antigua hasta la más reciente.
+            </p>
+
+        </div>
+
+        <!-- CENTRO -->
+        <div class="inicio-centro">
+
+            <h1 class="titulo">Feed Temporal</h1>
+
+            <p class="descripcion">
+                Ordena correctamente las publicaciones antes de que el tiempo termine.
+            </p>
+
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+            <button onclick="iniciarJuego()">
+                INICIAR
+            </button>
+
+        </div>
+
+        <!-- DERECHA -->
+        <div class="panel-info">
+
+            <h2>¿Para qué sirve?</h2>
+
+            <p>
+                La consistencia temporal ayuda a comprender secuencias,
+                organizar información y mejorar la lógica mental.
+            </p>
+
+            <p>
+                También se utiliza en programación, redes sociales,
+                inteligencia artificial y sistemas digitales.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- TUTORIAL -->
+    <div id="tutorial" class="pantalla oculto">
+
+        <h1 class="titulo">¿Cómo jugar?</h1>
+
+        <p class="descripcion">
+            Debes ordenar las publicaciones desde la más antigua
+            hasta la más reciente arrastrando las tarjetas.
+        </p>
+
+        <div class="tutorial-feed">
+
+            <div class="tutorial-post correcto-demo">
+                <span>10:15</span>
+            </div>
+
+            <div class="flecha">➡</div>
+
+            <div class="tutorial-post correcto-demo">
+                <span>11:20</span>
+            </div>
+
+            <div class="flecha">➡</div>
+
+            <div class="tutorial-post correcto-demo">
+                <span>12:45</span>
+            </div>
+
+        </div>
+
+        <p class="descripcion">
+            El orden correcto siempre va desde la hora más pequeña
+            hacia la más grande.
+        </p>
+
+        <button onclick="comenzarJuego()">
+            ENTENDÍ
+        </button>
+
+    </div>
+
+    <!-- JUEGO -->
+    <div id="juego" class="pantalla oculto">
+
+        <div class="top-bar">
+
+            <div class="info-box">
+                ⏱ Tiempo:
+                <span id="tiempo">30</span>
+            </div>
+
+            <div class="info-box">
+                ⭐ Puntos:
+                <span id="puntos">0</span>
+            </div>
+
+            <div class="info-box">
+                🔥 Combo:
+                <span id="combo">0</span>
+            </div>
+
+        </div>
+
+        <h2 id="nivel"></h2>
+
+        <div class="progreso">
+            <div id="barraNivel"></div>
+        </div>
+
+        <div id="feed" class="feed"></div>
+
+        <button class="verificar-btn" onclick="verificar()">
+            VERIFICAR
+        </button>
+
+    </div>
+
+    <!-- FINAL -->
+    <div id="fin" class="pantalla oculto">
+
+        <div class="resultado-card">
+
+            <h1>RESULTADO FINAL</h1>
+
+            <div id="finalTexto"></div>
+
+            <button onclick="reiniciar()">
+                VOLVER A JUGAR
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- SONIDOS -->
+    <audio id="ok" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3"></audio>
+
+    <audio id="fail" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3"></audio>
+
+    <audio id="move" src="https://assets.mixkit.co/sfx/preview/mixkit-click-ui-1119.mp3"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

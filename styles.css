@@ -1,0 +1,767 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+
+    background:
+        linear-gradient(-45deg,
+            #0f2027,
+            #203a43,
+            #2c5364,
+            #1a1a2e);
+
+    background-size: 400% 400%;
+
+    animation: fondo 12s ease infinite;
+}
+
+@keyframes fondo {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================
+   PARTICULAS
+========================= */
+
+#particles {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background: transparent;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+#loader {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #000;
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-title {
+
+    font-size: 60px;
+
+    margin-bottom: 30px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px cyan,
+        0 0 20px cyan,
+        0 0 40px cyan;
+}
+
+.barra-carga {
+
+    width: 320px;
+
+    height: 14px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #222;
+}
+
+.progreso-carga {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            cyan,
+            magenta);
+
+    animation: cargar 3s forwards;
+}
+
+@keyframes cargar {
+
+    to {
+        width: 100%;
+    }
+}
+
+/* =========================
+   PANTALLAS
+========================= */
+
+.pantalla {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    z-index: 2;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* =========================
+   INICIO
+========================= */
+
+.inicio-container {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 40px;
+
+    z-index: 2;
+}
+
+/* =========================
+   PANELES
+========================= */
+
+.panel-info {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    line-height: 1.9;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.08);
+}
+
+.panel-info:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 20px cyan,
+        0 0 45px rgba(128, 0, 255, 0.4);
+}
+
+.panel-info h2 {
+
+    margin-bottom: 20px;
+
+    color: cyan;
+
+    font-size: 34px;
+
+    text-shadow:
+        0 0 10px cyan;
+}
+
+.panel-info p {
+
+    font-size: 17px;
+
+    opacity: 0.92;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   CENTRO
+========================= */
+
+.inicio-centro {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.titulo {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px cyan,
+        0 0 20px cyan,
+        0 0 40px cyan;
+
+    animation: flotar 2.5s infinite ease-in-out;
+}
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =========================
+   DESCRIPCION
+========================= */
+
+.descripcion {
+
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+    opacity: 0.92;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+
+    width: 300px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+
+    outline: none;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: white;
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(45deg,
+            #ff004c,
+            #ff7b00);
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 12px #ff004c,
+        0 0 25px #ff7b00;
+}
+
+button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px #ff004c,
+        0 0 40px #ff7b00;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+
+    width: 100%;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 25px;
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box {
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+/* =========================
+   JUEGO
+========================= */
+
+#juego {
+
+    z-index: 2;
+
+    padding-top: 140px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    height: 100vh;
+
+    justify-content: flex-start;
+}
+
+#nivel {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 10px cyan;
+}
+
+/* =========================
+   PROGRESO
+========================= */
+
+.progreso {
+
+    width: 320px;
+
+    height: 15px;
+
+    background: #111;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin: 20px auto;
+}
+
+#barraNivel {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            cyan,
+            magenta);
+
+    transition: 0.4s;
+}
+
+/* =========================
+   FEED
+========================= */
+
+.feed {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 22px;
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 40px auto;
+
+    padding-bottom: 120px;
+}
+
+/* =========================
+   POSTS
+========================= */
+
+.post {
+
+    min-height: 180px;
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    cursor: grab;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.post:hover {
+
+    transform:
+        translateY(-8px) scale(1.03);
+
+    box-shadow:
+        0 0 20px cyan,
+        0 0 35px purple;
+}
+
+.avatar {
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    background:
+        linear-gradient(45deg,
+            cyan,
+            purple);
+}
+
+.contenido {
+
+    text-align: left;
+}
+
+.contenido h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+.contenido p {
+
+    font-size: 14px;
+
+    opacity: 0.88;
+
+    line-height: 1.6;
+}
+
+.hora {
+
+    display: inline-block;
+
+    margin-top: 14px;
+
+    padding: 6px 12px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    font-weight: bold;
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+.resultado-card {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.2);
+}
+
+.resultado-card h1 {
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 15px cyan;
+}
+
+#finalTexto h2,
+#finalTexto h3 {
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   TUTORIAL
+========================= */
+
+.tutorial-feed {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin: 40px 0;
+}
+
+.tutorial-post {
+
+    width: 130px;
+
+    height: 85px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.correcto-demo {
+
+    animation: brillo 2s infinite;
+}
+
+@keyframes brillo {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.flecha {
+
+    font-size: 40px;
+
+    color: cyan;
+
+    text-shadow:
+        0 0 10px cyan;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px) {
+
+    .inicio-container {
+
+        grid-template-columns: 1fr;
+
+        overflow-y: auto;
+    }
+
+    .titulo {
+        font-size: 55px;
+    }
+}
+
+@media(max-width:768px) {
+
+    .top-bar {
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    #juego {
+
+        padding-top: 190px;
+    }
+
+    .titulo {
+        font-size: 45px;
+    }
+
+    .panel-info h2 {
+        font-size: 28px;
+    }
+
+    .panel-info p {
+        font-size: 15px;
+    }
+
+    input {
+        width: 100%;
+    }
+}
